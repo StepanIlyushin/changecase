@@ -16,4 +16,6 @@ jobs:
     - name: Build
       run: g++ change.cpp -0 change
     - name: Test
-      run: ./test.sh
+      run: |
+            chmod u+x test.sh
+            ./test.sh

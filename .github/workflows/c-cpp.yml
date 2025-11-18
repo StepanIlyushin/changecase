@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: g++ change.cpp -0 change
+      run: g++ change.cpp -o change
     - name: Test
       run: |
             chmod u+x test.sh

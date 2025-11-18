@@ -1,3 +1,5 @@
+[![C/C++ CI](https://github.com/StepanIlyushin/changecase/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/StepanIlyushin/changecase/actions/workflows/c-cpp.yml)
+
 # Конвертер регистров
 Учебный проект.
 
@@ -18,3 +20,4 @@
 - `-L` - преобразование текста в нижний регистр,
 - `-G` - переключение регистров (из ВЕРХНЕГО в нижний и наоборот),
 - `-T` - каждое слово начинается с заглавной буквы.
+

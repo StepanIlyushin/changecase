@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <cstdlib>
 
 void help(){
     std::cout << "Use\n\tchangefile source_file distination_file\n";
@@ -68,6 +69,27 @@ void title_case(std::ifstream & inFile, std::ofstream & outFile){
     }
 }
 
+void random_case(std::ifstream & inFile, std::ofstream & outFile){
+    int ch;
+    bool n;
+    while ( (ch=inFile.get()) != EOF){
+        if ((ch>='a' && ch<='z')){
+            n= rand() % 2;
+            if (n == 0){
+                ch= ch - 'a' + 'A';
+            }
+        }
+        if ((ch>='A' && ch <= 'Z')){
+            n= rand() % 2;
+            if (n == 0){
+                ch = (ch - 'A') + 'a';
+            }
+        }
+        outFile.put(ch);
+    }
+}
+
+
 
 int main(int argc, char* argv[]){
     if (argc != 4){
@@ -102,6 +124,9 @@ int main(int argc, char* argv[]){
     }
     else if(strcmp(argv[1], "-T") == 0){
         title_case(inFile, outFile);
+    }
+    else if(strcmp(argv[1], "-R") == 0){
+        random_case(inFile, outFile);
     }
     else{
         help();
